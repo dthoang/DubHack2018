@@ -1,5 +1,6 @@
 import { Component }    from '@angular/core';
 import { PublicService } from '../service/public.service';
+import { mock_data }    from '../service/mock_data';
 
 @Component ({
     templateUrl: './landing.page.html',
@@ -7,12 +8,6 @@ import { PublicService } from '../service/public.service';
 })
 
 export class Landing{
-    constructor( private publicService:PublicService){
-        this.publicService.getToken()
-            .then(success => {
-                this.publicService.getAllTweets();
-                
-            })
-    }
+
     
 }
