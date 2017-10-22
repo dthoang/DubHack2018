@@ -7,7 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
+var app_routing_module_1 = require("./app-routing.module");
+// Imports for loading & configuring the in-memory web api
 var app_component_1 = require("./app.component");
+var landing_page_1 = require("./views/landing.page");
+var public_service_1 = require("./service/public.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -15,8 +21,17 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule,
+            app_routing_module_1.AppRoutingModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            landing_page_1.Landing
+        ],
+        providers: [public_service_1.PublicService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
